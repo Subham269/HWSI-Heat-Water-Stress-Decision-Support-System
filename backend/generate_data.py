@@ -177,6 +177,6 @@ for _, row in df_map.iterrows():
     geojson["features"].append(feature)
     counters[d] += 1
 
-with open(f"{base_dir}/blocks.geojson", "w") as f:
-    json.dump(geojson, f)
-
+# with open(f"{base_dir}/blocks.geojson", "w") as f:
+#     json.dump(geojson, f)
+# NOTE: blocks.geojson is now real Census 2011 data. Do not regenerate it.
