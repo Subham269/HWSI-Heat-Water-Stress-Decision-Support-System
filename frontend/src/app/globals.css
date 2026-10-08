@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --band-Low: #22c55e;
+  --band-Moderate: #eab308;
+  --band-High: #f97316;
+  --band-VeryHigh: #ef4444;
+}
+
+body {
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+}

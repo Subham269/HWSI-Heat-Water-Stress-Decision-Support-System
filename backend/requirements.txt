@@ -1,0 +1,9 @@
+FastAPI
+uvicorn
+pandas
+numpy
+scipy
+httpx
+pydantic
+pyyaml
+apscheduler
