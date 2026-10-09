@@ -1,4 +1,4 @@
-# HWSI: Heat-Water Stress Decision Support System
+# Project Bhumi - Heat-Water Stress Decision Support System
 
 > **A decision support platform for District Disaster Management Authorities to prioritize emergency heat-and-water resource allocation before extreme events occur.**
 
@@ -19,13 +19,13 @@ During extreme summer heatwaves, district administrators face a severe operation
 
 Most existing dashboards either show raw weather forecasts or isolated water monitoring maps. None reconcile **heat hazard, chronic water deficit, population exposure, and socio-economic vulnerability** into an actionable, explainable emergency resource allocation model.
 
-**HWSI is not a passive weather viewer — it is an emergency resource allocation decision engine.**
+**Project Bhumi (HWSI) is not a passive weather viewer — it is an emergency resource allocation decision engine.**
 
 ---
 
 ## 🎯 Pilot Implementation
 
-HWSI implements a disciplined **pilot-first architecture** covering **56 Community Development (CD) Blocks** across three contrasting agro-climatic zones in West Bengal, India:
+Project Bhumi implements a disciplined **pilot-first architecture** covering **56 Community Development (CD) Blocks** across three contrasting agro-climatic zones in West Bengal, India:
 
 1. **Purulia District (20 Blocks):** Drought-prone western hard-rock plateau, high water deficit, fluoride risk, low piped water coverage.
 2. **Bankura District (22 Blocks):** Semi-arid transition belt with high agricultural outdoor worker vulnerability.
@@ -35,7 +35,7 @@ HWSI implements a disciplined **pilot-first architecture** covering **56 Communi
 
 ## 🏛️ Conceptual Model: $H \times E \times V$
 
-HWSI unifies climate indicators into a single geometric multi-criteria framework:
+The engine unifies climate indicators into a single geometric multi-criteria framework:
 
 $$\text{HWSI} = H^{w_h} \times E^{w_e} \times V^{w_v}$$
 
@@ -56,7 +56,7 @@ $$\text{where } x' = 0.05 + 0.95 \times \text{clip}\left(\frac{x - \text{lo}}{\t
 
 ## ⚙️ Resource Allocation Engine
 
-To eliminate double-counting (exposure already lives in HWSI), HWSI computes resource-specific needs and allocates using **marginal benefit optimization**:
+To eliminate double-counting (exposure already lives in HWSI), Project Bhumi computes resource-specific needs and allocates using **marginal benefit optimization**:
 
 $$\text{Need}_i^r = (H_i^r)^a \times (V_i^r)^b \quad (\text{with } a + b = 1)$$
 
@@ -74,14 +74,15 @@ $$\text{Benefit}_i(u) = \text{Pop}_i \times \text{Need}_i^r \times \left[1 - \ex
 
 * **AHP (Analytic Hierarchy Process):** Expert comparison matrices are mathematically validated with a target **Consistency Ratio (CR) < 0.10** ($\text{Current CR} = 0.0079$).
 * **Monte Carlo Sensitivity Analysis:** 1,000 draws perturbing component weights by $\pm 20\%$ to verify **Top-5 Ranking Stability** (reporting the percentage of runs each top block remains in the top 5).
-* **Transparent Limitations:** The dashboard displays explicit data-freshness timestamps and limitations (e.g., Census 2011 vintage, mock inventories).
+* **Compounding Scenario Engine:** Early warning decision projection (+0, +1, +2 days) modeling continuous heatwave thermal accumulation, nocturnal recovery deficits, and soil desiccation.
+* **Technical Dossier:** Complete mathematical and empirical proof dossier available in [`docs/HWSI_Mathematical_Reliability_and_Verification_Dossier.pdf`](docs/HWSI_Mathematical_Reliability_and_Verification_Dossier.pdf).
 
 ---
 
 ## 💻 Tech Stack & Architecture
 
 ```
-HWSI Architecture
+Project Bhumi Architecture
 ├── Backend (FastAPI + In-Memory DataFrames)
 │   ├── Data Engine        # Ingests Census, JJM, CGWB, & GeoJSON
 │   ├── ETL Transforms     # Rothfusz Heat Index, Warm-Night runs, ET sums
@@ -107,8 +108,8 @@ HWSI Architecture
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/project-bhumi.git
-cd project-bhumi/hwsi
+git clone https://github.com/my-project-repo/HWSI-Heat-Water-Stress-Decision-Support-System.git
+cd HWSI-Heat-Water-Stress-Decision-Support-System
 ```
 
 ### 2. Backend Setup
@@ -145,9 +146,9 @@ npm run dev
 
 | Endpoint | Method | Purpose |
 |---|---|---|
-| `/api/v1/blocks/risk-index` | `GET` | Fetches HWSI scores, H/E/V values, lens sub-scores, and ranks for all 56 blocks. |
-| `/api/v1/blocks/{id}/explain` | `GET` | Returns full explainability payload: indicator weights, raw values, and plain-language summaries. |
-| `/api/v1/allocate` | `POST` | Accepts `{ tankers, cooling_units }` and returns Optimizer results vs 2 baselines with rationales. |
+| `/api/v1/blocks/risk-index` | `GET` | Fetches HWSI scores, H/E/V values, lens sub-scores, and ranks for all 56 blocks (accepts `extra_days`). |
+| `/api/v1/blocks/{id}/explain` | `GET` | Returns full explainability payload: indicator weights, raw values, and plain-language summaries (accepts `extra_days`). |
+| `/api/v1/allocate` | `POST` | Accepts `{ tankers, cooling_units, extra_days }` and returns Optimizer results vs 2 baselines with rationales. |
 | `/api/v1/data-status` | `GET` | Returns source metadata, freshness timestamps, and lineage badges. |
 | `/api/v1/validation` | `GET` | Returns AHP Consistency Ratio and Monte Carlo top-5 ranking stability metrics. |
 | `/health` | `GET` | System health check and in-memory data integrity status. |
@@ -157,7 +158,7 @@ npm run dev
 ## 🗺️ Roadmap
 
 - [x] **P0 (Current MVP):** 56-block pilot, in-memory Pandas engine, AHP weighting, greedy allocator with dual baselines, MapLibre choropleth, and click-to-explain panels.
-- [ ] **P1:** Live Open-Meteo centroid polling with fallback cache, scenario forecasting slider (+2 days).
+- [x] **P1:** Live Open-Meteo centroid polling with fallback cache, scenario forecasting slider (+2 days), real ground truth datasets (Census 2011, CGWB, JJM, WBPHED).
 - [ ] **P2:** Simulated bilingual alert generation (English & Bengali), PostGIS migration for state-wide coverage (345 blocks).
 - [ ] **Phase 3:** Integration of satellite MODIS Land Surface Temperature (LST) and real-time tanker GPS tracking.
 
