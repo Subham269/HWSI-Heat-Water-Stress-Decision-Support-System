@@ -1,8 +1,8 @@
 export const API_BASE_URL = 'http://localhost:8000';
 
 export const MAP_DEFAULTS = {
-  center: { longitude: 87.8550, latitude: 23.2324 }, // Purulia/Bankura roughly
-  zoom: 7.5,
+  center: { longitude: 87.10, latitude: 22.96 }, // Centered across Purulia, Bankura, and Howrah
+  zoom: 8.0,
 };
 
 export const COLOR_SCALES = {

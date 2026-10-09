@@ -1,12 +1,17 @@
 from fastapi import APIRouter, Request
 from typing import List
+import pandas as pd
 from app.models import BlockRiskResponse
+from app.engine.hwsi import get_scenario_hwsi_df
 
 router = APIRouter()
 
 @router.get("/api/v1/blocks/risk-index", response_model=List[BlockRiskResponse])
 def get_risk_index(request: Request, extra_days: int = 0):
-    df = request.app.state.hwsi_df
+    df = get_scenario_hwsi_df(request.app.state, extra_days)
+    if df is None:
+        df = request.app.state.hwsi_df
+        
     stability_dict = getattr(request.app.state, 'stability_map', {})
     
     results = []

@@ -18,8 +18,12 @@ export async function fetchRiskIndex(extraDays: number = 0): Promise<BlockRisk[]
   return res.json();
 }
 
-export async function fetchBlockExplanation(blockId: string): Promise<BlockExplanation> {
-  const res = await fetch(`${API_BASE_URL}/api/v1/blocks/${blockId}/explain`);
+export async function fetchBlockExplanation(blockId: string, extraDays: number = 0): Promise<BlockExplanation> {
+  const url = new URL(`${API_BASE_URL}/api/v1/blocks/${blockId}/explain`);
+  if (extraDays > 0) {
+    url.searchParams.append('extra_days', extraDays.toString());
+  }
+  const res = await fetch(url.toString());
   if (!res.ok) throw new Error(`Failed to fetch explanation for ${blockId}`);
   return res.json();
 }

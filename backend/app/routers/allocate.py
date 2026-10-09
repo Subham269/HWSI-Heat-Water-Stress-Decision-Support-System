@@ -2,6 +2,7 @@ from fastapi import APIRouter, Request
 from app.models import AllocationRequest, AllocationResponse, AllocationResult, BlockAllocation
 from app.optimizer.allocator import optimize_allocation
 from app.optimizer.baselines import compute_baselines
+from app.engine.hwsi import get_scenario_hwsi_df
 
 router = APIRouter()
 
@@ -45,7 +46,9 @@ def build_allocations(tanker_allocs, cooling_allocs, df):
 
 @router.post("/api/v1/allocate", response_model=AllocationResponse)
 def allocate_resources(request: Request, body: AllocationRequest):
-    df = request.app.state.hwsi_df
+    df = get_scenario_hwsi_df(request.app.state, body.extra_days or 0)
+    if df is None:
+        df = request.app.state.hwsi_df
     
     # Run optimizer for both tankers and cooling units
     opt_tankers = optimize_allocation(df, "tankers", body.tankers)
