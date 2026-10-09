@@ -28,7 +28,10 @@ app.add_middleware(
 async def startup_event():
     logger.info("Loading data and computing HWSI scores...")
     data_dir = os.path.join(os.path.dirname(__file__), "..", "data")
-    data = load_all_data(data_dir)
+    data = await load_all_data(data_dir, extra_days=0)
+    
+    app.state.data_dir = data_dir
+    app.state.raw_data = data
     
     # Compute base HWSI
     hwsi_df = compute_hwsi(data["blocks_df"])
@@ -80,7 +83,7 @@ async def startup_event():
     with open(snapshot_path, "w") as f:
         json.dump(geojson, f)
         
-    logger.info("Startup complete.")
+    logger.info("Startup complete with live weather & ground truth data.")
 
 app.include_router(risk.router)
 app.include_router(explain.router)

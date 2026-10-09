@@ -59,3 +59,36 @@ def compute_hwsi(blocks_df: pd.DataFrame) -> pd.DataFrame:
     result["rank"] = result["hwsi_score"].rank(ascending=False, method="min").astype(int)
     
     return result
+
+def get_scenario_hwsi_df(app_state, extra_days: int = 0) -> pd.DataFrame:
+    """Retrieve or dynamically compute HWSI dataframe for given extra_days scenario (0, 1, 2)."""
+    if extra_days <= 0:
+        return getattr(app_state, 'hwsi_df', None)
+    
+    cache_key = f"hwsi_df_extra_{extra_days}"
+    cached_df = getattr(app_state, cache_key, None)
+    if cached_df is not None:
+        return cached_df
+        
+    raw_data = getattr(app_state, 'raw_data', None)
+    if not raw_data:
+        return getattr(app_state, 'hwsi_df', None)
+        
+    from app.engine.etl import calculate_weather_features_for_block
+    df_base = raw_data["blocks_df"].copy()
+    forecasts = raw_data.get("forecasts", {})
+    
+    weather_rows = []
+    for b_id in df_base['block_id']:
+        f_data = forecasts.get(b_id, {})
+        w_feats = calculate_weather_features_for_block(f_data, extra_days=extra_days)
+        w_feats['block_id'] = b_id
+        weather_rows.append(w_feats)
+        
+    df_weather = pd.DataFrame(weather_rows)
+    weather_cols = ["heat_index", "warm_nights", "precip_deficit", "et", "sm_slope", "tmin_ma"]
+    df_base = df_base.drop(columns=[c for c in weather_cols if c in df_base.columns])
+    df_base = df_base.merge(df_weather, on='block_id', how='left')
+    scenario_df = compute_hwsi(df_base)
+    setattr(app_state, cache_key, scenario_df)
+    return scenario_df

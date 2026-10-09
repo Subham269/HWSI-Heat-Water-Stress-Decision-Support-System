@@ -2,6 +2,7 @@ from fastapi import APIRouter, Request, HTTPException
 from app.models import BlockExplanation, BlockComponents, ComponentDetail, IndicatorDetail
 import app.config as config
 from app.engine.ahp import get_weights_from_config
+from app.engine.hwsi import get_scenario_hwsi_df
 import pandas as pd
 
 router = APIRouter()
@@ -25,8 +26,10 @@ INDICATOR_METADATA = {
 }
 
 @router.get("/api/v1/blocks/{block_id}/explain", response_model=BlockExplanation)
-def explain_block(request: Request, block_id: str):
-    df = request.app.state.hwsi_df
+def explain_block(request: Request, block_id: str, extra_days: int = 0):
+    df = get_scenario_hwsi_df(request.app.state, extra_days)
+    if df is None:
+        df = request.app.state.hwsi_df
     block_row = df[df['block_id'] == block_id]
     
     if block_row.empty:
