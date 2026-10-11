@@ -14,10 +14,10 @@ export function CredibilityPanel() {
   }
 
   return (
-    <div className="p-4 flex flex-col h-full overflow-y-auto space-y-6 pb-8">
+    <div className="p-3 sm:p-5 flex flex-col h-full overflow-y-auto space-y-6 pb-8">
       <div>
-        <h3 className="text-lg font-bold mb-2">Credibility & Quality</h3>
-        <p className="text-sm text-gray-600">
+        <h3 className="text-lg sm:text-xl font-bold mb-1 text-gray-900 tracking-tight">Credibility & Quality</h3>
+        <p className="text-xs sm:text-sm text-gray-600 text-pretty">
           HWSI model mathematical validation and data source lineage.
         </p>
       </div>

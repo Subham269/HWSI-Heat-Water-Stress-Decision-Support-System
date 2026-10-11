@@ -62,14 +62,14 @@ export function BlockExplainer({ explanation, isLoading, extraDays = 0 }: BlockE
   const bandColor = getBandColor(explanation.band);
 
   return (
-    <div className="p-4 flex flex-col h-full overflow-y-auto pb-8">
+    <div className="p-3 sm:p-5 flex flex-col h-full overflow-y-auto pb-8">
       {/* Block Header */}
       <div className="mb-5">
-        <h2 className="text-2xl font-bold text-gray-900">{explanation.block_name}</h2>
-        <div className="text-gray-600 text-sm">{explanation.district} District</div>
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight">{explanation.block_name}</h2>
+        <div className="text-gray-500 text-xs sm:text-sm">{explanation.district} District</div>
         
-        <div className="mt-4 flex items-end gap-3">
-          <div className="text-5xl font-black tracking-tighter" style={{ color: bandColor }}>
+        <div className="mt-3 sm:mt-4 flex items-end gap-3">
+          <div className="text-4xl sm:text-5xl font-black tracking-tighter tabular-nums" style={{ color: bandColor }}>
             {formatNumber(explanation.hwsi, 3)}
           </div>
           <div className="pb-1">
