@@ -8,3 +8,4 @@ pydantic
 pyyaml
 apscheduler
 python-dotenv
+boto3
