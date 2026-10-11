@@ -1,0 +1,5 @@
+{
+  "test": "live_allocation",
+  "tankers": 20,
+  "cooling_units": 10
+}

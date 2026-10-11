@@ -1,0 +1,280 @@
+{
+  "optimizer": {
+    "method": "Marginal Benefit Optimizer",
+    "total_coverage": 976989.8,
+    "allocations": [
+      {
+        "block_id": "HOW_08",
+        "block_name": "Sankrail",
+        "district": "Howrah",
+        "tankers": 2,
+        "cooling_units": 3,
+        "need_score": 0.588,
+        "population": 343933.0,
+        "rationale": "2 tankers for high water deficit; 3 cooling units for extreme heat vulnerability. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "HOW_05",
+        "block_name": "Domjur",
+        "district": "Howrah",
+        "tankers": 1,
+        "cooling_units": 3,
+        "need_score": 0.559,
+        "population": 377588.0,
+        "rationale": "1 tankers for high water deficit; 3 cooling units for extreme heat vulnerability. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "BAN_12",
+        "block_name": "Kotulpur",
+        "district": "Bankura",
+        "tankers": 1,
+        "cooling_units": 1,
+        "need_score": 0.713,
+        "population": 188775.0,
+        "rationale": "1 tankers for high water deficit; 1 cooling units for extreme heat vulnerability. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "HOW_10",
+        "block_name": "Shyampur-II",
+        "district": "Howrah",
+        "tankers": 1,
+        "cooling_units": 1,
+        "need_score": 0.675,
+        "population": 196164.0,
+        "rationale": "1 tankers for high water deficit; 1 cooling units for extreme heat vulnerability. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "BAN_14",
+        "block_name": "Onda",
+        "district": "Bankura",
+        "tankers": 1,
+        "cooling_units": 1,
+        "need_score": 0.645,
+        "population": 252984.0,
+        "rationale": "1 tankers for high water deficit; 1 cooling units for extreme heat vulnerability. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "HOW_12",
+        "block_name": "Uluberia-I",
+        "district": "Howrah",
+        "tankers": 1,
+        "cooling_units": 1,
+        "need_score": 0.645,
+        "population": 215392.0,
+        "rationale": "1 tankers for high water deficit; 1 cooling units for extreme heat vulnerability. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "BAN_15",
+        "block_name": "Patrasayer",
+        "district": "Bankura",
+        "tankers": 1,
+        "cooling_units": 0,
+        "need_score": 0.708,
+        "population": 184070.0,
+        "rationale": "1 tankers for high water deficit. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "HOW_09",
+        "block_name": "Shyampur-I",
+        "district": "Howrah",
+        "tankers": 1,
+        "cooling_units": 0,
+        "need_score": 0.614,
+        "population": 205849.0,
+        "rationale": "1 tankers for high water deficit. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "HOW_13",
+        "block_name": "Uluberia-II",
+        "district": "Howrah",
+        "tankers": 1,
+        "cooling_units": 0,
+        "need_score": 0.603,
+        "population": 191599.0,
+        "rationale": "1 tankers for high water deficit. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "BAN_06",
+        "block_name": "Gangajalghati",
+        "district": "Bankura",
+        "tankers": 1,
+        "cooling_units": 0,
+        "need_score": 0.563,
+        "population": 180974.0,
+        "rationale": "1 tankers for high water deficit. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "PUR_14",
+        "block_name": "Para",
+        "district": "Purulia",
+        "tankers": 1,
+        "cooling_units": 0,
+        "need_score": 0.461,
+        "population": 200621.0,
+        "rationale": "1 tankers for high water deficit. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "PUR_10",
+        "block_name": "Kashipur",
+        "district": "Purulia",
+        "tankers": 1,
+        "cooling_units": 0,
+        "need_score": 0.446,
+        "population": 200083.0,
+        "rationale": "1 tankers for high water deficit. Next unit maximizes marginal population benefit."
+      }
+    ]
+  },
+  "baseline_hwsi": {
+    "method": "Highest HWSI First",
+    "total_coverage": 799885.0,
+    "allocations": [
+      {
+        "block_id": "BAN_21",
+        "block_name": "Sonamukhi",
+        "district": "Bankura",
+        "tankers": 1,
+        "cooling_units": 1,
+        "need_score": 0.716,
+        "population": 158697.0,
+        "rationale": "1 tankers for high water deficit; 1 cooling units for extreme heat vulnerability. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "BAN_12",
+        "block_name": "Kotulpur",
+        "district": "Bankura",
+        "tankers": 1,
+        "cooling_units": 1,
+        "need_score": 0.713,
+        "population": 188775.0,
+        "rationale": "1 tankers for high water deficit; 1 cooling units for extreme heat vulnerability. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "BAN_15",
+        "block_name": "Patrasayer",
+        "district": "Bankura",
+        "tankers": 1,
+        "cooling_units": 1,
+        "need_score": 0.708,
+        "population": 184070.0,
+        "rationale": "1 tankers for high water deficit; 1 cooling units for extreme heat vulnerability. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "HOW_10",
+        "block_name": "Shyampur-II",
+        "district": "Howrah",
+        "tankers": 1,
+        "cooling_units": 1,
+        "need_score": 0.675,
+        "population": 196164.0,
+        "rationale": "1 tankers for high water deficit; 1 cooling units for extreme heat vulnerability. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "BAN_10",
+        "block_name": "Jaypur",
+        "district": "Bankura",
+        "tankers": 1,
+        "cooling_units": 1,
+        "need_score": 0.657,
+        "population": 156920.0,
+        "rationale": "1 tankers for high water deficit; 1 cooling units for extreme heat vulnerability. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "BAN_14",
+        "block_name": "Onda",
+        "district": "Bankura",
+        "tankers": 1,
+        "cooling_units": 1,
+        "need_score": 0.645,
+        "population": 252984.0,
+        "rationale": "1 tankers for high water deficit; 1 cooling units for extreme heat vulnerability. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "HOW_12",
+        "block_name": "Uluberia-I",
+        "district": "Howrah",
+        "tankers": 1,
+        "cooling_units": 1,
+        "need_score": 0.645,
+        "population": 215392.0,
+        "rationale": "1 tankers for high water deficit; 1 cooling units for extreme heat vulnerability. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "BAN_22",
+        "block_name": "Taldangra",
+        "district": "Bankura",
+        "tankers": 1,
+        "cooling_units": 1,
+        "need_score": 0.643,
+        "population": 147893.0,
+        "rationale": "1 tankers for high water deficit; 1 cooling units for extreme heat vulnerability. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "HOW_09",
+        "block_name": "Shyampur-I",
+        "district": "Howrah",
+        "tankers": 1,
+        "cooling_units": 1,
+        "need_score": 0.614,
+        "population": 205849.0,
+        "rationale": "1 tankers for high water deficit; 1 cooling units for extreme heat vulnerability. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "HOW_11",
+        "block_name": "Udaynarayanpur",
+        "district": "Howrah",
+        "tankers": 1,
+        "cooling_units": 1,
+        "need_score": 0.612,
+        "population": 190186.0,
+        "rationale": "1 tankers for high water deficit; 1 cooling units for extreme heat vulnerability. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "BAN_09",
+        "block_name": "Indus",
+        "district": "Bankura",
+        "tankers": 1,
+        "cooling_units": 0,
+        "need_score": 0.606,
+        "population": 169783.0,
+        "rationale": "1 tankers for high water deficit. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "BAN_16",
+        "block_name": "Raipur",
+        "district": "Bankura",
+        "tankers": 1,
+        "cooling_units": 0,
+        "need_score": 0.605,
+        "population": 171377.0,
+        "rationale": "1 tankers for high water deficit. Next unit maximizes marginal population benefit."
+      },
+      {
+        "block_id": "HOW_13",
+        "block_name": "Uluberia-II",
+        "district": "Howrah",
+        "tankers": 1,
+        "cooling_units": 0,
+        "need_score": 0.603,
+        "population": 191599.0,
+        "rationale": "1 tankers for high water deficit. Next unit maximizes marginal population benefit."
+      }
+    ]
+  },
+  "baseline_proportional": {
+    "method": "Proportional Allocation",
+    "total_coverage": 76234.6,
+    "allocations": [
+      {
+        "block_id": "HOW_08",
+        "block_name": "Sankrail",
+        "district": "Howrah",
+        "tankers": 1,
+        "cooling_units": 0,
+        "need_score": 0.588,
+        "population": 343933.0,
+        "rationale": "1 tankers for high water deficit. Next unit maximizes marginal population benefit."
+      }
+    ]
+  }
+}
