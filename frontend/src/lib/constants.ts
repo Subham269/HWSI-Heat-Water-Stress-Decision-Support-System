@@ -1,4 +1,4 @@
-export const API_BASE_URL = 'http://localhost:8000';
+export const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000').replace(/\/$/, '');
 
 export const MAP_DEFAULTS = {
   center: { longitude: 87.10, latitude: 22.96 }, // Centered across Purulia, Bankura, and Howrah
